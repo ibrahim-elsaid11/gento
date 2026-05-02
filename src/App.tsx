@@ -10,71 +10,75 @@ export default function App() {
   return (
     <div className="min-h-screen bg-canvas font-sans selection:bg-brand-pink selection:text-white">
       {/* Top Navigation */}
-      <nav className="flex items-center justify-between px-6 md:px-12 py-4 md:py-6 max-w-[1440px] mx-auto">
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-primary text-white flex items-center justify-center">
-            <Bot size={20} />
+      <nav className="sticky top-0 z-50 backdrop-blur-md bg-canvas/80 border-b border-hairline">
+        <div className="flex items-center justify-between px-6 md:px-12 py-4 md:py-6 max-w-[1440px] mx-auto">
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 rounded-lg bg-primary text-white flex items-center justify-center">
+              <Bot size={20} />
+            </div>
+            <span className="text-xl font-bold tracking-tight">Gento</span>
           </div>
-          <span className="text-xl font-bold tracking-tight">Gento</span>
-        </div>
-        
-        <div className="hidden md:flex items-center gap-10">
-          <a href="#agents" className="text-[14px] font-medium text-ink/70 hover:text-ink transition-colors">Agents</a>
-          <a href="#platform" className="text-[14px] font-medium text-ink/70 hover:text-ink transition-colors">Platform</a>
-          <a href="#about" className="text-[14px] font-medium text-ink/70 hover:text-ink transition-colors">Company</a>
-        </div>
+          
+          <div className="hidden md:flex items-center gap-10">
+            <a href="#agents" className="text-[14px] font-medium text-ink/70 hover:text-primary transition-colors duration-200">Agents</a>
+            <a href="#platform" className="text-[14px] font-medium text-ink/70 hover:text-primary transition-colors duration-200">Platform</a>
+            <a href="#about" className="text-[14px] font-medium text-ink/70 hover:text-primary transition-colors duration-200">Company</a>
+          </div>
 
-        <div className="flex items-center gap-4">
-          <button className="px-5 py-2.5 bg-primary text-white text-[14px] font-semibold rounded-[12px] hover:bg-opacity-90 transition-opacity">
-            Book a Demo
-          </button>
+          <div className="flex items-center gap-4">
+            <button className="px-5 py-2.5 bg-primary text-white text-[14px] font-semibold rounded-[12px] hover:bg-opacity-90 transition-opacity duration-200">
+              Book a Demo
+            </button>
+          </div>
         </div>
       </nav>
 
       <main>
         {/* Hero Band */}
-        <section className="py-12 md:py-[96px] px-6 md:px-12 max-w-[1440px] mx-auto">
-          <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-center mb-12">
-            <div className="md:col-span-7 flex flex-col items-start gap-8">
+        <section className="py-16 md:py-[120px] px-6 md:px-12 max-w-[1440px] mx-auto">
+          <div className="grid md:grid-cols-12 gap-8 md:gap-16 items-center mb-16">
+            <div className="md:col-span-6 flex flex-col items-start gap-8">
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="inline-flex items-center gap-2 px-3 py-1.5 bg-surface-card rounded-pill border border-hairline"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-surface-card rounded-full border border-hairline hover:border-primary transition-colors duration-200"
               >
                 <Sparkles size={14} className="text-brand-pink" />
-                <span className="text-[13px] font-medium tracking-wide uppercase text-ink/60">Introducing Gento 1.0</span>
+                <span className="text-[13px] font-semibold tracking-wide uppercase text-ink/70">Introducing Gento 2.0</span>
               </motion.div>
               
-              <motion.h1 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-display-xl text-ink leading-[0.9] max-w-[15ch]"
               >
-                The AI agent that does the work for you.
-              </motion.h1>
+                <h1 className="text-display-xl text-ink leading-[0.95] max-w-2xl mb-2">
+                  Meet your AI workforce
+                </h1>
+                <p className="text-[20px] text-brand-pink font-semibold">That actually gets work done.</p>
+              </motion.div>
               
               <motion.p 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-[18px] text-ink/80 max-w-lg leading-relaxed"
+                className="text-[18px] text-ink/75 max-w-xl leading-relaxed font-light"
               >
-                Meet Gento, the world's most capable general-purpose AI agent. It uses a computer just like you do—navigating interfaces, researching the web, and executing complex workflows without supervision.
+                Gento is the world's most capable AI agent. It operates software like a human, navigating interfaces, researching the web, and executing complex workflows—all without supervision. Enterprise-ready. Genuinely autonomous.
               </motion.p>
               
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="flex items-center gap-4 pt-4"
+                className="flex flex-col md:flex-row items-start md:items-center gap-4 pt-6"
               >
-                <button className="px-6 py-3 bg-primary text-white text-[16px] font-semibold rounded-[12px] hover:bg-opacity-90 transition-opacity flex items-center gap-2">
-                  Book a Demo <ChevronRight size={16} />
+                <button className="px-8 py-4 bg-primary text-white text-[16px] font-semibold rounded-[12px] hover:shadow-lg hover:shadow-primary/20 transition-all duration-200 flex items-center gap-2 group">
+                  Start for free <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </button>
-                <button className="px-6 py-3 bg-canvas border border-hairline text-ink text-[16px] font-semibold rounded-[12px] hover:bg-surface-card transition-colors">
-                  See how it works
+                <button className="px-8 py-4 bg-white border-2 border-primary text-primary text-[16px] font-semibold rounded-[12px] hover:bg-primary/5 transition-colors duration-200">
+                  Schedule a demo
                 </button>
               </motion.div>
             </div>
@@ -83,7 +87,7 @@ export default function App() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="md:col-span-5 relative"
+              className="md:col-span-6 relative"
             >
               {/* Playful Hero Artifact Card */}
               <div className="bg-surface-soft rounded-xl p-8 aspect-square relative border border-hairline overflow-hidden flex flex-col justify-end">
@@ -121,68 +125,103 @@ export default function App() {
               </div>
             </motion.div>
           </div>
+
+          {/* Trust & Adoption Section */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="pt-12 md:pt-16 border-t border-hairline"
+          >
+            <p className="text-center text-[13px] font-semibold uppercase text-ink/50 tracking-wide mb-8">
+              Trusted by forward-thinking organizations
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 items-center justify-items-center">
+              <div className="flex items-center justify-center gap-2 px-4 py-3 bg-surface-soft rounded-lg border border-hairline hover:border-primary transition-colors duration-200 w-full">
+                <span className="text-[14px] font-semibold text-ink/70">Acme Corp</span>
+              </div>
+              <div className="flex items-center justify-center gap-2 px-4 py-3 bg-surface-soft rounded-lg border border-hairline hover:border-primary transition-colors duration-200 w-full">
+                <span className="text-[14px] font-semibold text-ink/70">TechFlow</span>
+              </div>
+              <div className="flex items-center justify-center gap-2 px-4 py-3 bg-surface-soft rounded-lg border border-hairline hover:border-primary transition-colors duration-200 w-full">
+                <span className="text-[14px] font-semibold text-ink/70">DataSync</span>
+              </div>
+              <div className="flex items-center justify-center gap-2 px-4 py-3 bg-surface-soft rounded-lg border border-hairline hover:border-primary transition-colors duration-200 w-full">
+                <span className="text-[14px] font-semibold text-ink/70">CloudBase</span>
+              </div>
+            </div>
+          </motion.div>
         </section>
 
         {/* Feature Cards Grid */}
-        <section id="agents" className="py-12 md:py-[96px] px-6 md:px-12 max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="md:col-span-3 mb-8">
-             <h2 className="text-display-md text-ink">Operates any software, just like a human.</h2>
-             <p className="text-title-md text-ink/70 mt-4 max-w-3xl">No brittle APIs or predefined scripts. Give Gento a high-level goal, and it will autonomously browse the web, operate desktop applications, and use spreadsheet software to get it done.</p>
+        <section id="agents" className="py-16 md:py-[120px] px-6 md:px-12 max-w-[1440px] mx-auto">
+          <div className="mb-16">
+             <div className="inline-flex items-center gap-2 px-4 py-2 bg-surface-card rounded-full border border-hairline mb-6">
+               <Zap size={14} className="text-brand-pink" />
+               <span className="text-[12px] font-semibold uppercase tracking-wider text-ink/60">Core Capabilities</span>
+             </div>
+             <h2 className="text-display-lg text-ink mb-6 max-w-2xl leading-tight">Autonomous agents that adapt to any workflow</h2>
+             <p className="text-[18px] text-ink/70 max-w-3xl leading-relaxed font-light">No brittle APIs or predefined scripts. Give Gento a high-level goal, and it will autonomously browse the web, operate desktop applications, and execute complex workflows without supervision.</p>
           </div>
 
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
           <motion.div 
-            whileHover={{ y: -4 }}
-            className="bg-brand-pink rounded-xl p-8 flex flex-col justify-between group overflow-hidden relative"
+            whileHover={{ y: -6 }}
+            transition={{ duration: 0.3 }}
+            className="bg-gradient-to-br from-brand-pink to-brand-pink/90 rounded-xl p-8 flex flex-col justify-between group overflow-hidden relative shadow-lg hover:shadow-xl transition-shadow duration-300"
           >
-            <div className="absolute top-0 right-0 p-8 opacity-20 transform translate-x-1/4 -translate-y-1/4">
-              <Zap size={120} className="text-white" />
+            <div className="absolute top-0 right-0 p-8 opacity-15 transform translate-x-1/4 -translate-y-1/4">
+              <Zap size={140} className="text-white" />
             </div>
-            <div className="relative z-10 mb-24">
-              <h3 className="text-[24px] font-medium leading-tight tracking-tight text-white mb-2">Deep Autonomous Research</h3>
-              <p className="text-[14px] text-white/80 font-medium">Gento doesn't just summarize search results. It navigates sites, bypasses popups, synthesizes data from hundreds of sources, and compiles everything into actionable reports.</p>
+            <div className="relative z-10 mb-20">
+              <h3 className="text-[22px] font-semibold leading-tight tracking-tight text-white mb-3">Deep Autonomous Research</h3>
+              <p className="text-[14px] text-white/90 font-medium leading-relaxed">Gento doesn't just summarize search results. It navigates sites, bypasses popups, synthesizes data from hundreds of sources, and compiles everything into actionable reports.</p>
             </div>
             
             <div className="relative z-10">
-              <button className="px-4 py-2.5 bg-white text-ink text-[14px] font-semibold rounded-[12px] group-hover:bg-opacity-90 transition-opacity">
-                See research capabilities
+              <button className="px-4 py-2.5 bg-white text-brand-pink text-[14px] font-semibold rounded-[12px] hover:bg-white/90 transition-all duration-200">
+                Explore capabilities
               </button>
             </div>
           </motion.div>
 
           <motion.div 
-            whileHover={{ y: -4 }}
-            className="bg-brand-teal rounded-xl p-8 flex flex-col justify-between group overflow-hidden relative"
+            whileHover={{ y: -6 }}
+            transition={{ duration: 0.3 }}
+            className="bg-gradient-to-br from-brand-teal to-brand-teal/90 rounded-xl p-8 flex flex-col justify-between group overflow-hidden relative shadow-lg hover:shadow-xl transition-shadow duration-300"
           >
-             <div className="absolute top-0 left-0 p-8 opacity-20 transform -translate-x-1/4 -translate-y-1/4">
-              <Workflow size={120} className="text-white" />
+             <div className="absolute top-0 left-0 p-8 opacity-15 transform -translate-x-1/4 -translate-y-1/4">
+              <Workflow size={140} className="text-white" />
             </div>
-            <div className="relative z-10 mb-24">
-              <h3 className="text-[24px] font-medium leading-tight tracking-tight text-white mb-2">Universal Tool Execution</h3>
-              <p className="text-[14px] text-white/80 font-medium">Powered by state-of-the-art computer vision models, Gento sees the screen, clicks interfaces, and types on keyboards to operate any desktop or web application.</p>
+            <div className="relative z-10 mb-20">
+              <h3 className="text-[22px] font-semibold leading-tight tracking-tight text-white mb-3">Universal Tool Execution</h3>
+              <p className="text-[14px] text-white/90 font-medium leading-relaxed">Powered by state-of-the-art computer vision models, Gento sees the screen, clicks interfaces, and types on keyboards to operate any desktop or web application.</p>
             </div>
             
             <div className="relative z-10">
-               <button className="px-4 py-2.5 bg-white text-ink text-[14px] font-semibold rounded-[12px] group-hover:bg-opacity-90 transition-opacity">
-                Watch it execute
+               <button className="px-4 py-2.5 bg-white text-brand-teal text-[14px] font-semibold rounded-[12px] hover:bg-white/90 transition-all duration-200">
+                Watch execution
               </button>
             </div>
           </motion.div>
 
           <motion.div 
-            whileHover={{ y: -4 }}
-            className="bg-brand-lavender rounded-xl p-8 flex flex-col justify-between group overflow-hidden relative"
+            whileHover={{ y: -6 }}
+            transition={{ duration: 0.3 }}
+            className="bg-gradient-to-br from-brand-lavender to-brand-lavender/80 rounded-xl p-8 flex flex-col justify-between group overflow-hidden relative shadow-lg hover:shadow-xl transition-shadow duration-300"
           >
-             <div className="absolute bottom-0 right-0 p-6 opacity-20 transform translate-x-1/4 translate-y-1/4">
-              <Layers size={120} className="text-ink" />
+             <div className="absolute bottom-0 right-0 p-6 opacity-15 transform translate-x-1/4 translate-y-1/4">
+              <Layers size={140} className="text-ink/40" />
             </div>
-            <div className="relative z-10 mb-24">
-              <h3 className="text-[24px] font-medium leading-tight tracking-tight text-ink mb-2">Self-Correcting Reasoning</h3>
-              <p className="text-[14px] text-ink/80 font-medium">Gento adapts on the fly. It plans multi-step journeys, recognizes roadblocks, and dynamically corrects its own trajectory if an interface changes.</p>
+            <div className="relative z-10 mb-20">
+              <h3 className="text-[22px] font-semibold leading-tight tracking-tight text-ink mb-3">Self-Correcting Reasoning</h3>
+              <p className="text-[14px] text-ink/80 font-medium leading-relaxed">Gento adapts on the fly. It plans multi-step journeys, recognizes roadblocks, and dynamically corrects its own trajectory if an interface changes.</p>
             </div>
             
             <div className="relative z-10">
-               <button className="px-4 py-2.5 bg-primary text-white text-[14px] font-semibold rounded-[12px] group-hover:bg-opacity-90 transition-opacity">
-                Learn about the architecture
+               <button className="px-4 py-2.5 bg-primary text-white text-[14px] font-semibold rounded-[12px] hover:shadow-lg hover:shadow-primary/20 transition-all duration-200">
+                Learn the architecture
               </button>
             </div>
           </motion.div>
@@ -378,68 +417,91 @@ export default function App() {
         </section>
 
         {/* CTA Band */}
-        <section className="py-12 md:py-[96px] px-6 md:px-12 max-w-[1440px] mx-auto">
-           <div className="bg-surface-soft rounded-xl p-12 md:p-20 text-center flex flex-col items-center border border-hairline relative overflow-hidden">
-              <div className="absolute -top-12 -left-12 w-48 h-48 bg-brand-pink rounded-full opacity-10 blur-3xl"></div>
-              <div className="absolute -bottom-12 -right-12 w-48 h-48 bg-brand-ochre rounded-full opacity-10 blur-3xl"></div>
+        <section className="py-20 md:py-[140px] px-6 md:px-12 max-w-[1440px] mx-auto">
+           <div className="bg-gradient-to-br from-surface-soft via-surface-soft to-brand-lavender/20 rounded-2xl p-12 md:p-24 text-center flex flex-col items-center border border-hairline relative overflow-hidden shadow-lg">
+              <div className="absolute -top-20 -left-20 w-64 h-64 bg-brand-pink rounded-full opacity-8 blur-3xl"></div>
+              <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-brand-ochre rounded-full opacity-8 blur-3xl"></div>
               
-              <h2 className="text-[40px] leading-none tracking-tight font-medium md:text-display-lg text-ink max-w-2xl relative z-10 mb-6">
-                Scale your operations instantly.
-              </h2>
-              <p className="text-[18px] text-ink/80 mb-10 max-w-xl relative z-10">
-                Hire your first autonomous agent today. Start scaling your operations, research, and workflows instantly without adding headcount.
-              </p>
+              <motion.h2 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="text-display-lg leading-tight tracking-tight font-medium text-ink max-w-2xl relative z-10 mb-6"
+              >
+                Ready to scale with autonomous agents?
+              </motion.h2>
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="text-[18px] text-ink/75 mb-10 max-w-2xl relative z-10 leading-relaxed font-light"
+              >
+                Join hundreds of teams using Gento to research, execute workflows, and automate operations. Your first autonomous agent is ready today.
+              </motion.p>
               
-              <button className="px-8 py-4 bg-primary text-white text-[16px] font-semibold rounded-[12px] hover:bg-opacity-90 transition-opacity relative z-10 flex items-center gap-2">
-                Book a Demo <ChevronRight size={18} />
-              </button>
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="relative z-10 flex flex-col md:flex-row gap-4 justify-center"
+              >
+                <button className="px-8 py-4 bg-primary text-white text-[16px] font-semibold rounded-[12px] hover:shadow-xl hover:shadow-primary/25 transition-all duration-200 flex items-center justify-center gap-2 group">
+                  Get started free <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                </button>
+                <button className="px-8 py-4 bg-white border-2 border-primary text-primary text-[16px] font-semibold rounded-[12px] hover:bg-primary/5 transition-colors duration-200">
+                  Schedule demo call
+                </button>
+              </motion.div>
            </div>
         </section>
       </main>
 
       {/* Footer */}
-      <footer className="bg-surface-soft pt-[80px] pb-[40px] px-6 border-t border-surface-card">
+      <footer className="bg-primary text-white pt-[80px] pb-[40px] px-6 border-t border-primary">
          <div className="max-w-[1440px] px-0 md:px-6 mx-auto grid grid-cols-2 md:grid-cols-5 gap-8 mb-16">
             <div className="col-span-2">
               <div className="flex items-center gap-2 mb-6">
-                <div className="w-8 h-8 rounded-lg bg-primary text-white flex items-center justify-center">
+                <div className="w-8 h-8 rounded-lg bg-white text-primary flex items-center justify-center">
                   <Bot size={20} />
                 </div>
                 <span className="text-xl font-bold tracking-tight">Gento</span>
               </div>
-              <p className="text-[14px] text-ink/60 font-medium max-w-xs leading-relaxed">
+              <p className="text-[14px] text-white/70 font-light max-w-xs leading-relaxed">
                 The autonomous workforce platform for ambitious teams. Let agents do the heavy lifting.
               </p>
             </div>
             
             <div className="flex flex-col gap-4">
-              <span className="text-[12px] font-bold text-ink uppercase tracking-wider mb-2">Product</span>
-              <a href="#" className="text-[14px] font-medium text-ink/70 hover:text-brand-pink transition-colors">Agents</a>
-              <a href="#" className="text-[14px] font-medium text-ink/70 hover:text-brand-pink transition-colors">Workflows</a>
-              <a href="#" className="text-[14px] font-medium text-ink/70 hover:text-brand-pink transition-colors">Integrations</a>
-              <a href="#" className="text-[14px] font-medium text-ink/70 hover:text-brand-pink transition-colors">Security</a>
+              <span className="text-[12px] font-bold text-white/80 uppercase tracking-wider mb-2">Product</span>
+              <a href="#" className="text-[14px] font-medium text-white/70 hover:text-white transition-colors duration-200">Agents</a>
+              <a href="#" className="text-[14px] font-medium text-white/70 hover:text-white transition-colors duration-200">Workflows</a>
+              <a href="#" className="text-[14px] font-medium text-white/70 hover:text-white transition-colors duration-200">Integrations</a>
+              <a href="#" className="text-[14px] font-medium text-white/70 hover:text-white transition-colors duration-200">Security</a>
             </div>
             
             <div className="flex flex-col gap-4">
-              <span className="text-[12px] font-bold text-ink uppercase tracking-wider mb-2">Company</span>
-              <a href="#" className="text-[14px] font-medium text-ink/70 hover:text-brand-pink transition-colors">About Us</a>
-              <a href="#" className="text-[14px] font-medium text-ink/70 hover:text-brand-pink transition-colors">Careers</a>
-              <a href="#" className="text-[14px] font-medium text-ink/70 hover:text-brand-pink transition-colors">Manifesto</a>
-              <a href="#" className="text-[14px] font-medium text-ink/70 hover:text-brand-pink transition-colors">Contact</a>
+              <span className="text-[12px] font-bold text-white/80 uppercase tracking-wider mb-2">Company</span>
+              <a href="#" className="text-[14px] font-medium text-white/70 hover:text-white transition-colors duration-200">About Us</a>
+              <a href="#" className="text-[14px] font-medium text-white/70 hover:text-white transition-colors duration-200">Careers</a>
+              <a href="#" className="text-[14px] font-medium text-white/70 hover:text-white transition-colors duration-200">Manifesto</a>
+              <a href="#" className="text-[14px] font-medium text-white/70 hover:text-white transition-colors duration-200">Contact</a>
             </div>
             
             <div className="flex flex-col gap-4">
-              <span className="text-[12px] font-bold text-ink uppercase tracking-wider mb-2">Legal</span>
-              <a href="#" className="text-[14px] font-medium text-ink/70 hover:text-brand-pink transition-colors">Privacy Policy</a>
-              <a href="#" className="text-[14px] font-medium text-ink/70 hover:text-brand-pink transition-colors">Terms of Service</a>
+              <span className="text-[12px] font-bold text-white/80 uppercase tracking-wider mb-2">Legal</span>
+              <a href="#" className="text-[14px] font-medium text-white/70 hover:text-white transition-colors duration-200">Privacy Policy</a>
+              <a href="#" className="text-[14px] font-medium text-white/70 hover:text-white transition-colors duration-200">Terms of Service</a>
             </div>
          </div>
          
-         <div className="max-w-[1440px] px-0 md:px-6 mx-auto pt-8 border-t border-hairline flex flex-col items-center justify-center gap-6">
+         <div className="max-w-[1440px] px-0 md:px-6 mx-auto pt-8 border-t border-white/10 flex flex-col items-center justify-center gap-6">
             <div className="flex items-center gap-2">
-              <span className="text-[14px] text-ink/60">gento.ai</span>
-              <div className="w-2 h-2 bg-brand-ochre rounded-full"></div>
-              <span className="text-[14px] text-ink/60">© {new Date().getFullYear()}</span>
+              <span className="text-[14px] text-white/50">gento.ai</span>
+              <div className="w-2 h-2 bg-brand-pink rounded-full"></div>
+              <span className="text-[14px] text-white/50">© {new Date().getFullYear()}</span>
             </div>
          </div>
       </footer>
